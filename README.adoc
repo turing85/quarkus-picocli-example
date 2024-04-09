@@ -1,0 +1,80 @@
+= quarkus-picocli-example
+
+This project demonstrates how to use picocli in conjunction with web clients.
+
+== Building the project
+
+[tabs]
+====
+Windows::
++
+.Building the project
+[source,bash]
+----
+mvnw.cmd clean package
+----
+Linux::
++
+.Building the project
+[source,bash]
+----
+./mvnw clean package
+----
+====
+
+== Running the project
+
+=== Happy case: have a banana
+.Request a banana
+[source,bash]
+----
+java -jar target/quarkus-app/quarkus-run.jar -n banana
+----
+
+.Get a banana
+[source,log]
+----
+...
+2024-04-09 20:27:45,643 INFO  [de.tur.qua.pic.exa.FruitCommand] (main) {"name":"Banana","id":1,"family":"Musaceae","order":"Zingiberales","genus":"Musa","nutritions":{"calories":96,"fat":0.2,"sugar":17.2,"carbohydrates":22.0,"protein":1.0}}
+...
+----
+
+=== Sad case: ananab?!
+
+.Request a ananab
+[source,bash]
+----
+java -jar target/quarkus-app/quarkus-run.jar -n ananab
+----
+
+.No ananab 🙁
+[source,log]
+----
+...
+2024-04-09 20:27:51,435 WARN  [de.tur.qua.pic.exa.FruitCommand] (main) Unable to get information about ananab :(
+...
+----
+
+== Contributors ✨
+
+Thanks goes to these wonderful people (https://allcontributors.org/docs/en/emoji-key[emoji key]):
+
+++++
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://turing85.github.io"><img src="https://avatars.githubusercontent.com/u/32584495?v=4?s=100" width="100px;" alt="Marco Bungart"/><br /><sub><b>Marco Bungart</b></sub></a><br /><a href="#code-turing85" title="Code">💻</a> <a href="#maintenance-turing85" title="Maintenance">🚧</a> <a href="#doc-turing85" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+++++
+
+This project follows the https://github.com/all-contributors/all-contributors[all-contributors] specification. Contributions of any kind welcome!
